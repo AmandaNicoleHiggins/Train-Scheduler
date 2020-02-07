@@ -1,3 +1,5 @@
+
+// firebase code
 const firebaseConfig = {
     apiKey: "AIzaSyAJTS4cs33sqS8A87N_CqKZV4nD5RDFeZg",
     authDomain: "my-awesome-project-55813.firebaseapp.com",
@@ -15,3 +17,16 @@ const firebaseConfig = {
   // Click
   $("#submit").on("click", function(event) {
     event.preventDefault();
+
+    // Push
+    // creates object for holding data
+    var newTrain = {
+        trainName: trainName,
+        desitnation: desitnation,
+        firstTime: firstTime,
+        frequency: frequency,
+    };
+    // adds to database
+    database.ref().push(newTrain);
+});
+
